@@ -1,0 +1,280 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Space+Mono:wght@400;700&amp;family=Geist:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1f1f24",
+                    "on-secondary": "#003737",
+                    "primary": "#ffabf3",
+                    "primary-fixed-dim": "#ffabf3",
+                    "secondary-container": "#00fbfb",
+                    "secondary-fixed-dim": "#00dddd",
+                    "on-secondary-fixed": "#002020",
+                    "on-tertiary": "#323200",
+                    "surface": "#131318",
+                    "tertiary-fixed-dim": "#cdcd00",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "on-primary-fixed": "#380038",
+                    "surface-dim": "#131318",
+                    "background": "#131318",
+                    "tertiary-fixed": "#eaea00",
+                    "on-error": "#690005",
+                    "surface-container-high": "#2a292f",
+                    "tertiary": "#cdcd00",
+                    "surface-container-lowest": "#0e0e13",
+                    "on-tertiary-fixed-variant": "#494900",
+                    "on-secondary-fixed-variant": "#004f4f",
+                    "inverse-on-surface": "#303035",
+                    "on-primary-container": "#510051",
+                    "surface-container-low": "#1b1b20",
+                    "on-tertiary-container": "#424200",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#35343a",
+                    "primary-fixed": "#ffd7f5",
+                    "surface-tint": "#ffabf3",
+                    "on-surface-variant": "#dcbed4",
+                    "secondary-fixed": "#00fbfb",
+                    "surface-variant": "#35343a",
+                    "outline-variant": "#564052",
+                    "on-surface": "#e4e1e9",
+                    "on-background": "#e4e1e9",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#810081",
+                    "secondary": "#ffffff",
+                    "surface-bright": "#39393e",
+                    "inverse-surface": "#e4e1e9",
+                    "tertiary-container": "#b1b100",
+                    "on-secondary-container": "#007070",
+                    "primary-container": "#ff00ff",
+                    "error": "#ffb4ab",
+                    "on-primary": "#5b005b",
+                    "inverse-primary": "#a900a9",
+                    "outline": "#a4899d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "panel-gap": "2rem",
+                    "gutter": "1.5rem",
+                    "margin-desktop": "4rem",
+                    "margin-mobile": "1rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Geist"],
+                    "label-sm": ["Space Mono"],
+                    "headline-lg": ["Anton"],
+                    "headline-md": ["Anton"],
+                    "body-lg": ["Geist"],
+                    "display-xl": ["Anton"],
+                    "headline-lg-mobile": ["Anton"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "44px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-xl": ["84px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "32px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .spider-sense-bg {
+            background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+        .spider-sense-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg 15deg, rgba(255, 171, 243, 0.03) 16deg 17deg, transparent 18deg 360deg);
+            pointer-events: none;
+        }
+        .halftone-overlay {
+            background-image: radial-gradient(#ffffff 1px, transparent 0);
+            background-size: 4px 4px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+        }
+        .narration-box {
+            box-shadow: 6px 6px 0px 0px #000000;
+            transform: rotate(-1deg);
+        }
+        .comic-panel {
+            border: 2px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        .glitch-shadow-cyan {
+            filter: drop-shadow(-4px 0px 0px #00fbfb);
+        }
+        .glitch-shadow-magenta {
+            filter: drop-shadow(4px 0px 0px #ff00ff);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen spider-sense-bg selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 border-b-2 border-primary bg-surface/90 backdrop-blur-sm shadow-[4px 4px 0px 0px #ff00ff] fixed top-0 z-50">
+<div class="font-display-xl text-headline-md text-primary italic -skew-x-12 drop-shadow-[2px_2px_0px_#00fbfb]">SPIDER-VERSE</div>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface hover:text-primary transition-all font-label-sm text-label-sm hover:-skew-x-6 hover:scale-110" href="#">HERO</a>
+<a class="text-on-surface hover:text-primary transition-all font-label-sm text-label-sm hover:-skew-x-6 hover:scale-110" href="#">WORKS</a>
+<a class="text-tertiary font-bold border-b-2 border-tertiary font-label-sm text-label-sm hover:-skew-x-6 hover:scale-110" href="#">ABOUT</a>
+<a class="text-on-surface hover:text-primary transition-all font-label-sm text-label-sm hover:-skew-x-6 hover:scale-110" href="#">CONTACT</a>
+</div>
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform">menu</button>
+</nav>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16 relative">
+<div class="inline-block bg-tertiary text-on-tertiary px-8 py-4 narration-box border-2 border-black z-10 relative">
+<h1 class="font-display-xl text-[64px] md:text-display-xl leading-none italic uppercase">ORIGIN STORY</h1>
+</div>
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-secondary-container -z-10 skew-x-2 opacity-50"></div>
+</header>
+<!-- Parallel Universes Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-panel-gap items-start">
+<!-- Universe A: Skills -->
+<section class="space-y-12">
+<div class="bg-surface-container border-2 border-primary p-gutter relative overflow-hidden rotate-[1.2deg] shadow-[8px_8px_0px_0px_rgba(255,0,255,0.2)]">
+<div class="halftone-overlay absolute inset-0 pointer-events-none opacity-10"></div>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary flex items-center justify-center -rotate-6 border-2 border-black">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">bolt</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-secondary-container skew-x-[-10deg]">ONW TO BE SDE</h2>
+</div>
+<div class="space-y-6">
+<!-- Skill Item -->
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-sm text-label-sm text-primary uppercase">JS, PYTHON</span>
+<span class="font-label-sm text-label-sm text-secondary">95%</span>
+</div>
+<div class="h-4 bg-surface-container-highest border-2 border-on-surface-variant relative">
+<div class="h-full bg-primary-container w-[95%] relative">
+<div class="absolute inset-0 halftone-overlay opacity-30"></div>
+</div>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+
+<span class="font-label-sm text-label-sm text-secondary">REACT, POSTGRESQL (LEARNING)</span>
+</div>
+<div class="h-4 bg-surface-container-highest border-2 border-on-surface-variant relative">
+<div class="h-full bg-secondary-container w-[88%] relative">
+<div class="absolute inset-0 halftone-overlay opacity-30"></div>
+</div>
+</div>
+</div>
+<!-- Narration Box -->
+
+<!-- Image Block -->
+<div class="comic-panel h-64 mt-8 border-primary rotate-[-0.5deg]">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-75 hover:grayscale-0 transition-all duration-500" data-alt="A futuristic high-tech computer terminal displaying glowing magenta and cyan code patterns against a dark cyberpunk aesthetic. The screen is filled with complex geometric data visualizations and neon circuits. The lighting is moody and intense, with a digital halftone texture overlaying the entire scene, giving it a stylized comic book appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo_0JSysict98HFc8N0gbOanJzRnPF4pUtVGPuhMeq2sY9jWBQGE14FDoOgTgrB-n71_3a6HA6FMaoi6_zDy1Q9pDhJtYRHTRxGtpGZhOZTK5M2PaH-Usbm32s2G6feTAYTjbQmatpb2f_IHLoWhTKBXYMzcjnLvQVlwUibfVDM2NVyxIkK4MnZyiyJWg6Eqxc1gG_3kXfKO5SVHelwYP8X1He2GnWNBHMAnLtOf__X558JkERhZqUZ3QtoQFqjEM2rMDpuUFCc0HP">
+</div>
+</div>
+</div>
+</section>
+<!-- Universe B: Experience -->
+<section class="space-y-12 md:mt-24">
+<div class="bg-surface-container border-2 border-secondary-container p-gutter relative overflow-hidden rotate-[-1.5deg] shadow-[-8px_8px_0px_0px_rgba(0,251,251,0.2)]">
+<div class="halftone-overlay absolute inset-0 pointer-events-none opacity-10"></div>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center rotate-12 border-2 border-black">
+<span class="material-symbols-outlined text-on-secondary text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">history</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary skew-x-[10deg]">PARALLEL: TIMELINE</h2>
+</div>
+<div class="space-y-8">
+<!-- Experience Node -->
+<div class="relative pl-8 border-l-4 border-dashed border-secondary-container">
+<div class="absolute -left-[14px] top-0 w-6 h-6 bg-background border-4 border-secondary-container rounded-full"></div>
+<div class="mb-1 text-secondary-fixed font-label-sm text-label-sm">2021 — PRESENT</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2 italic">VIDEO EDITOR</h3>
+<p class="font-body-md text-on-surface-variant">editiing video for thr clients&nbsp;</p>
+</div>
+<!-- Experience Node -->
+<div class="relative pl-8 border-l-4 border-dashed border-primary">
+<div class="absolute -left-[14px] top-0 w-6 h-6 bg-background border-4 border-primary rounded-full"></div>
+<div class="mb-1 text-primary-fixed font-label-sm text-label-sm">2018 — 2021</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2 italic">STARK-LEVEL DEV</h3>
+<p class="font-body-md text-on-surface-variant">this one is a lie</p>
+</div>
+<!-- Narration Box -->
+<div class="bg-tertiary text-on-tertiary p-4 narration-box border-2 border-black mt-8 translate-x-4">
+<p class="font-label-sm text-body-md font-bold leading-tight">
+                                "EVERY ANOMALY IS A LESSON. EVERY SYSTEM CRASH IS AN OPPORTUNITY TO REBUILD THE MULTIVERSE STRONGER. I'VE SEEN THE FUTURE OF UI, AND IT'S GLORIOUSLY CHAOTIC."
+                            </p>
+</div>
+<!-- Image Block -->
+<div class="comic-panel h-64 mt-8 border-secondary-container rotate-[0.8deg]">
+<img class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500" data-alt="A cinematic low-angle shot of a sprawling futuristic city at night, illuminated by vibrant neon signs in electric blue and hot pink. Flying vehicles streak across the sky leaving trails of light. The atmosphere is hazy and industrial with a distinct comic book ink-shading style and grain textures that evoke a sense of urban grit and multidimensional motion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2HkodCocDqvJ9_uNnkaF2k-DAcMbjYD7tm5qxgTCkAp1Stdmyv7nlPevXvRsWXOjcaVgZ0WEixCzd5HWEW_xsdwASc0Ohsx2lPU9FKwp6aKqgAsUNolxngwthFa9RCfbAbRYvazCK_uVHD49tx9J4VHyzkwA3UvTRe608NEopw2w6XoQQx0aqwyP36eAcs2JUKnsG0Atz4-uFF6_87AfMxk4cv-4T1-lvpz6mJg7i55dTrhC_iBEVZUVyC5pMHh8oqGF6hibak5_n">
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Featured Quote / Speech Bubble -->
+<div class="mt-24 flex justify-center">
+<div class="relative bg-tertiary text-on-tertiary p-8 max-w-2xl border-4 border-black narration-box group hover:scale-105 transition-transform duration-300">
+<div class="absolute -bottom-10 right-10 w-0 h-0 border-l-[30px] border-l-transparent border-t-[40px] border-t-black border-r-[10px] border-r-transparent"></div>
+<div class="absolute -bottom-6 right-12 w-0 h-0 border-l-[20px] border-l-transparent border-t-[30px] border-t-tertiary border-r-[5px] border-r-transparent z-10"></div>
+<span class="material-symbols-outlined absolute -top-6 -left-6 bg-primary text-on-primary p-3 border-2 border-black rotate-[-15deg] text-3xl">format_quote</span>
+<p class="font-headline-md text-3xl italic text-center uppercase leading-tight">
+                    "With great design comes great responsibility to break the user's perception of reality."
+                </p>
+<div class="mt-4 text-right font-label-sm text-on-tertiary-fixed-variant">— EARTH-616 DESIGNER</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter border-t-4 border-double border-on-surface-variant bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-4">
+<div class="font-headline-md text-headline-md text-tertiary italic">SPIDER-VERSE</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed text-center md:text-left">© 2024 MULTIVERSE INK // CREATED BY DESIGN-OP</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary hover:italic transition-all font-label-sm text-label-sm" href="#">THREADS</a>
+<a class="text-on-surface-variant hover:text-secondary hover:italic transition-all font-label-sm text-label-sm" href="#">NEXUS</a>
+<a class="text-on-surface-variant hover:text-secondary hover:italic transition-all font-label-sm text-label-sm" href="#">SIGNAL</a>
+</div>
+</footer>
+<!-- Bottom Nav Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe bg-surface border-t-2 border-primary h-20 z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-[10px] uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-[10px] uppercase">Works</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none skew-x-6 p-3 animate-pulse">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">person</span>
+<span class="font-label-sm text-[10px] uppercase">About</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">send</span>
+<span class="font-label-sm text-[10px] uppercase">Contact</span>
+</div>
+</nav>
+
+
+</body></html>

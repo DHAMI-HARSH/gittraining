@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .spider-sense-bg {
+        background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        position: relative;
+    }
+    .spider-sense-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-conic-gradient(from 0deg, transparent 0deg 15deg, rgba(255, 171, 243, 0.03) 16deg 17deg, transparent 18deg 360deg);
+        pointer-events: none;
+    }
+    .halftone-overlay {
+        background-image: radial-gradient(#ffffff 1px, transparent 0);
+        background-size: 4px 4px;
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+    }
+    .narration-box {
+        box-shadow: 6px 6px 0px 0px #000000;
+        transform: rotate(-1deg);
+    }
+    .comic-panel {
+        border: 2px solid #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+    .glitch-shadow-cyan {
+        filter: drop-shadow(-4px 0px 0px #00fbfb);
+    }
+    .glitch-shadow-magenta {
+        filter: drop-shadow(4px 0px 0px #ff00ff);
+    }
+}

@@ -1,0 +1,486 @@
+<!-- Save as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayushi Sharma | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      background:#111827;
+      z-index:1000;
+      padding:15px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#a855f7;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a:hover{
+      color:#a855f7;
+      transition:0.3s;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding-top:80px;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:10px;
+    }
+
+    .hero h1 span{
+      color:#a855f7;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      color:#cbd5e1;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .btn-group{
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      border-radius:30px;
+      margin:10px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#a855f7;
+    }
+
+    .btn-primary:hover{
+      background:#9333ea;
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:2px solid #a855f7;
+    }
+
+    .btn-outline:hover{
+      background:#a855f7;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.5rem;
+      margin-bottom:50px;
+      color:#a855f7;
+    }
+
+    /* ABOUT */
+
+    .about{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      color:#cbd5e1;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-5px);
+      background:#334155;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .project-card h3{
+      margin-bottom:10px;
+      color:#a855f7;
+    }
+
+    /* EDUCATION */
+
+    .education-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      margin-bottom:20px;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievement-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .achievement-item{
+      background:#1e293b;
+      padding:20px;
+      border-radius:15px;
+      text-align:center;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:10px 0;
+      color:#cbd5e1;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      color:#94a3b8;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .nav-links{
+        gap:15px;
+        font-size:0.9rem;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Ayushi</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>Hello, I'm <span>Ayushi Sharma</span></h1>
+
+      <p>
+        BCA Student | Aspiring Software Developer | Machine Learning Enthusiast
+      </p>
+
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about">
+        <p>
+          I am currently pursuing Bachelor of Computer Applications (BCA)
+          at Swami Himalayan University with a CGPA of 8.15.
+          I am passionate about coding, machine learning, and learning
+          new technologies. I enjoy solving problems and participating
+          in hackathons and technical events.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <p>C, Java</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools</h3>
+          <p>MS Word, Excel, PowerPoint, GitHub</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Interests</h3>
+          <p>Machine Learning, Software Development</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <p>Communication, Leadership, Time Management</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+    <div class="container">
+
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>NASA Space Apps Hackathon</h3>
+
+          <p>
+            Participated in DIT College NASA Space Apps Hackathon
+            and collaborated on solving real-world challenges.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Public Health ML Project</h3>
+
+          <p>
+            Worked on a machine learning project focused on
+            social and public health issues.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+    <div class="container">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="education-card">
+        <h3>Swami Himalayan University</h3>
+        <p>Bachelor of Computer Applications (BCA)</p>
+        <p>CGPA: 8.15</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Happy Home Montessori School</h3>
+        <p>Class XII (CBSE) - 78%</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Happy Home Montessori School</h3>
+        <p>Class X (CBSE) - 72%</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Achievements</h2>
+
+      <div class="achievement-list">
+
+        <div class="achievement-item">
+          IEEE Student Branch Membership
+        </div>
+
+        <div class="achievement-item">
+          National Player in Tug of War
+        </div>
+
+        <div class="achievement-item">
+          House Captain in School
+        </div>
+
+        <div class="achievement-item">
+          Winner in Technical Quizzes
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container contact">
+
+      <h2 class="section-title">Contact Me</h2>
+
+      <p>📍 Rishikesh, Uttarakhand</p>
+      <p>📧 sharma2006ayushii@gmail.com</p>
+      <p>📱 7895825685</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Ayushi Sharma | Portfolio Website
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // Fade-in animation while scrolling
+
+    const cards = document.querySelectorAll(
+      '.skill-card, .project-card, .education-card, .achievement-item'
+    );
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(30px)";
+      card.style.transition = "all 0.6s ease";
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>
